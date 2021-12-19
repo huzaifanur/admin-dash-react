@@ -1,5 +1,10 @@
 import "./app.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/Topbar/Topbar";
 import Home from "./components/pages/home/Home";
@@ -17,7 +22,10 @@ const App = () => {
       <div className="container">
         <Sidebar />
         <Switch>
-          <Route exact path={"/home" || "/admin-dash-react"}>
+          <Route exact path="/admin-dash-react">
+            <Redirect to="/home" />
+          </Route>
+          <Route exact path="/home">
             <Home />
           </Route>
           <Route exact path="/users">
