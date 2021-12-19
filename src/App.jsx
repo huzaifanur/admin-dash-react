@@ -17,7 +17,7 @@ const App = () => {
       <div className="container">
         <Sidebar />
         <Switch>
-          <Route exact path={"/home" || "/"}>
+          <Route exact path={"/home" || "/admin-dash-react"}>
             <Home />
           </Route>
           <Route exact path="/users">
